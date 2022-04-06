@@ -1,0 +1,9 @@
+<aura:component access="global" Implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickActionWithoutHeader">
+    <article class="slds-card">
+    	<div class="slds-text-align_center" style="font-size: 20px; font-weight: bold;">
+            <p>
+            	Hello World
+            </p>
+        </div>
+    </article>
+</aura:component>
