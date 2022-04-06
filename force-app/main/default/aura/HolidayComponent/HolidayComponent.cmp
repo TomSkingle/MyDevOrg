@@ -1,0 +1,71 @@
+<aura:component controller="HolidayComponentClass" access="global" Implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickActionWithoutHeader">
+    <aura:attribute name="recordId" type="String"/>
+    <aura:attribute name="contactRecord" type="Contact"/>
+    <aura:handler event="force:refreshView" action="{!c.doInit}"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <article class="slds-card">
+    	<div class="slds-text-align_center" style="font-size: 20px; font-weight: bold;">
+            <p>
+            	Holiday Details <p style="font-size: 16px;"><br></br></p>
+            </p>
+        </div>
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_1-of-2 slds-text-align_left slds-p-left_xx-large">
+                <p style="font-size: 12px;">Holiday</p> <a href="{!'/' + v.contactRecord.Holiday__c}" tabindex="-1" style="font-size: 16px;">{!v.contactRecord.Holiday__r.Name}</a>
+            </div>
+            
+            <div class="slds-col slds-size_1-of-2 slds-text-align_left slds-p-left_xx-large">
+                <p style="font-size: 12px;">Hotel Name</p> <p style="font-size: 16px;">{!v.contactRecord.Holiday__r.Hotel_Name__c}</p> <p style="font-size: 8px;"><br></br></p>
+            </div>
+            
+            
+            
+            <div class="slds-col slds-size_1-of-2 slds-text-align_left slds-p-left_xx-large">
+                <p style="font-size: 12px;">Star Rating</p>
+                <aura:if isTrue="{!v.contactRecord.Holiday__r.Star_Rating__c == 5}">
+                    ‍<a style="font-size: 16px;">⭐⭐⭐⭐⭐</a>
+                </aura:if>
+                <aura:if isTrue="{!v.contactRecord.Holiday__r.Star_Rating__c == 4}">
+                    ‍<a style="font-size: 16px;">⭐⭐⭐⭐</a>
+                </aura:if>
+                <aura:if isTrue="{!v.contactRecord.Holiday__r.Star_Rating__c == 3}">
+                    ‍<a style="font-size: 16px;">⭐⭐⭐</a>
+                </aura:if>
+            </div>
+            
+            <div class="slds-col slds-size_1-of-2 slds-text-align_left slds-p-left_xx-large">
+                <p style="font-size: 12px;">City</p> <p style="font-size: 16px;">{!v.contactRecord.Holiday__r.City__c}</p> <p style="font-size: 8px;"><br></br></p>
+            </div>
+            
+            
+            
+            <div class="slds-col slds-size_1-of-2 slds-text-align_left slds-p-left_xx-large">
+                <p style="font-size: 12px;">Temperature Rating</p> <p style="font-size: 16px;">{!v.contactRecord.Holiday__r.Temperature_Rating__c}</p>
+            </div>
+            
+            <div class="slds-col slds-size_1-of-2 slds-text-align_left slds-p-left_xx-large">
+                <p style="font-size: 12px;">Country</p> <p style="font-size: 16px;">{!v.contactRecord.Holiday__r.Country__c}</p> <p style="font-size: 8px;"><br></br></p>
+            </div>
+            
+            
+            
+            <div class="slds-col slds-size_1-of-2 slds-text-align_left slds-p-left_xx-large">
+                <p style="font-size: 12px;">Category</p> <p style="font-size: 16px;">{!v.contactRecord.Holiday__r.Category__c}</p>
+            </div>
+            
+            <div class="slds-col slds-size_1-of-2 slds-text-align_left slds-p-left_xx-large">
+                <p style="font-size: 12px;">Continent</p> <p style="font-size: 16px;">{!v.contactRecord.Holiday__r.Continent__c}</p> <p style="font-size: 8px;"><br></br></p>
+            </div>
+            
+            
+            
+            <div class="slds-col slds-size_1-of-2 slds-text-align_left slds-p-left_xx-large">
+                <p style="font-size: 12px;">Price Per Night</p> <p style="font-size: 16px;">£{!v.contactRecord.Holiday__r.Price_Per_Night__c}</p>
+            </div>
+            
+            <div class="slds-col slds-size_1-of-2 slds-text-align_left slds-p-left_xx-large">
+                <p style="font-size: 12px;">Location</p> <p style="font-size: 16px;">{!v.contactRecord.Holiday__r.Location__c}</p> <p style="font-size: 8px;"><br></br></p>
+            </div>
+        </div>
+    </article>
+</aura:component>
